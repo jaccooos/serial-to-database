@@ -71,15 +71,15 @@ while True:
 
         elif data[0] == "s":  # Standby
             status_nummer = data[1:]
-			if status_nummer == 0
-				id_order = get_first_order(1)  # Pak eerste verzonden bestelling in queue
-				if id_order != -1:
-					execute_query("UPDATE bestelling SET Status=2 WHERE idBestelling=" + str(id_order))
-			elif status_nummer == 6
-				execute_query("DELETE FROM bestelling")  # Verwijder alle bestellingen
-			elif status_nummer < 8
+            if status_nummer == 0
+                id_order = get_first_order(1)  # Pak eerste verzonden bestelling in queue
+                if id_order != -1:
+                    execute_query("UPDATE bestelling SET Status=2 WHERE idBestelling=" + str(id_order))
+            elif status_nummer == 6
+                execute_query("DELETE FROM bestelling")  # Verwijder alle bestellingen
+            elif status_nummer < 8
                 execute_query("UPDATE Statussen SET Status=" + status_nummer)
-				execute_query("UPDATE Statussen SET Error=0, Bezig=1, Gereed=0")
+                execute_query("UPDATE Statussen SET Error=0, Bezig=1, Gereed=0")
             else 
                 pass
         
@@ -87,12 +87,12 @@ while True:
         elif data[0] == "c":  # Celcius
             temperature = data[1:]
             execute_query("UPDATE Statussen SET Temperatuur=" + temperature)
-			
-		elif data[0] == "m":  # Celcius
+            
+        elif data[0] == "m":  # Celcius
             magazijn = data[1:]
             execute_query("UPDATE Statussen SET Magazijn=" + magazijn)
-		
-		elif data[0] == "v":  # Celcius
+        
+        elif data[0] == "v":  # Celcius
             vooraad = data[1:]
             execute_query("UPDATE Statussen SET Vooraad=" + vooraad)
 
