@@ -13,7 +13,7 @@ def execute_query(query):
 		db_conn = pymysql.connect(host="localhost",
 								  user="monitor",
 								  passwd="Raspberry",
-								  db="projectbirra") or print("could not connect to database")
+								  db="projectBirra") or print("could not connect to database")
 		db_cursor = db_conn.cursor()
 		db_cursor.execute(query)
 		db_conn.commit()
@@ -28,7 +28,7 @@ def get_first_order(status):
 		db_conn = pymysql.connect(host="localhost",
 								  user="monitor",
 								  passwd="Raspberry",
-								  db="projectbirra") or print("could not connect to database")
+								  db="projectBirra") or print("could not connect to database")
 		db_cursor = db_conn.cursor()
 		row_count = db_cursor.execute("SELECT idBestelling FROM bestelling WHERE Status = " + str(status) + " LIMIT 1")
 
