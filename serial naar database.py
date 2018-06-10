@@ -71,7 +71,7 @@ while True:
 
 		elif data[0] == "s":  # Standby
 			status_nummer = data[1:]
-			if status_nummer == 0
+			if status_nummer == 0:
 				id_order = get_first_order(1)  # Pak eerste verzonden bestelling in queue
 				if id_order != -1:
 					execute_query("UPDATE bestelling SET Status=2 WHERE idBestelling=" + str(id_order))
