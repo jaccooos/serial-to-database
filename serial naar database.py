@@ -75,9 +75,9 @@ while True:
 				id_order = get_first_order(1)  # Pak eerste verzonden bestelling in queue
 				if id_order != -1:
 					execute_query("UPDATE bestelling SET Status=2 WHERE idBestelling=" + str(id_order))
-			elif status_nummer == 6
+			elif status_nummer == 6:
 				execute_query("DELETE FROM bestelling")	 # Verwijder alle bestellingen
-			elif status_nummer < 8
+			elif status_nummer < 8:
 				execute_query("UPDATE Statussen SET Status=" + status_nummer)
 				execute_query("UPDATE Statussen SET Error=0, Bezig=1, Gereed=0")
 			else 
