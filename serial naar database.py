@@ -80,19 +80,19 @@ while True:
 			elif status_nummer < 8:
 				execute_query("UPDATE Statussen SET Status=" + status_nummer)
 				execute_query("UPDATE Statussen SET Error=0, Bezig=1, Gereed=0")
-			else :
-				pass
+			else:
+				pass;
 		
 		
 		elif data[0] == "c":  # Celcius
 			temperature = data[1:]
 			execute_query("UPDATE Statussen SET Temperatuur=" + temperature)
 			
-		elif data[0] == "m":  # Celcius
+		elif data[0] == "m":  # procenten van beker magazijn
 			magazijn = data[1:]
 			execute_query("UPDATE Statussen SET Magazijn=" + magazijn)
 		
-		elif data[0] == "v":  # Celcius
+		elif data[0] == "v":  # Procenten van bier vooraad
 			vooraad = data[1:]
 			execute_query("UPDATE Statussen SET Vooraad=" + vooraad)
 
