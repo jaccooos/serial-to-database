@@ -80,7 +80,7 @@ while True:
 			elif status_nummer < 8:
 				execute_query("UPDATE Statussen SET Status=" + status_nummer)
 				execute_query("UPDATE Statussen SET Error=0, Bezig=1, Gereed=0")
-			else 
+			else :
 				pass
 		
 		
