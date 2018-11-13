@@ -11,9 +11,9 @@ serial_arduino = serial.Serial(device, baudrate, timeout=1)
 def execute_query(query):
 	try:
 		db_conn = pymysql.connect(host="localhost",
-								  user="monitor",
-								  passwd="Raspberry",
-								  db="projectBirra") or print("could not connect to database")
+								  user="phpmyadmin",
+								  passwd="raspberry",
+								  db="pulse") or print("could not connect to database")
 		db_cursor = db_conn.cursor()
 		db_cursor.execute(query)
 		db_conn.commit()
@@ -26,9 +26,9 @@ def execute_query(query):
 def get_first_order(status):
 	try:
 		db_conn = pymysql.connect(host="localhost",
-								  user="monitor",
-								  passwd="Raspberry",
-								  db="projectBirra") or print("could not connect to database")
+								  user="phpmyadmin",
+								  passwd="raspberry",
+								  db="pulse") or print("could not connect to database")
 		db_cursor = db_conn.cursor()
 		row_count = db_cursor.execute("SELECT idBestelling FROM bestelling WHERE Status = " + str(status) + " LIMIT 1")
 
